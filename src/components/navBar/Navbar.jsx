@@ -20,7 +20,7 @@ const Navbar = () => {
       <NavLink className="px-3 font-semibold" to={"/add-model"}>
         Add Model
       </NavLink>
-      <NavLink className="px-3 font-semibold" to={"/all-models"}>
+      <NavLink className="px-3 font-semibold" to={"/models"}>
         All Models
       </NavLink>
     </>

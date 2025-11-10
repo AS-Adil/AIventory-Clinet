@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
 
             },
             {
-                path:'all-models',
+                path:'models',
                 element:<AllModels></AllModels>
             },
             {
