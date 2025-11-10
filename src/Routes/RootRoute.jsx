@@ -7,6 +7,7 @@ import AddModel from "../pages/add-model/AddModel";
 import ModelPurchase from "../pages/model-purchase/ModelPurchase";
 import MyModels from "../pages/my-models/MyModels";
 import AllModels from "../pages/all-models/AllModels";
+import ModelDetails from "../pages/model-details/ModelDetails";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 path:'my-models',
                 element:<PrivateRoute><MyModels></MyModels></PrivateRoute>
+            },
+            {
+                path:'models/:id',
+                element:<PrivateRoute><ModelDetails></ModelDetails></PrivateRoute>
             }
         ]
         

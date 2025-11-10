@@ -16,7 +16,7 @@ const AllModels = () => {
         })
         .finally(()=> setLoading(false))
     }, [])
-    console.log(models);
+    // console.log(models);
 
     if(loading){
         return <Spinner></Spinner>
