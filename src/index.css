@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #20BEFF;
+  --color-secondary: #202124;
+}
+
+.active{
+    @apply border-b-3 border-secondary
+    
+}
