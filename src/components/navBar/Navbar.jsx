@@ -6,10 +6,10 @@ import { AuthContext } from "../../provider/AuthContext";
 
 const Navbar = () => {
   const { user, setUser, logOut } = useContext(AuthContext);
-  console.log(user?.photoURL);
+  // console.log(user?.photoURL);
 
   const location = useLocation();
-console.log('route is',location.pathname);
+// console.log('route is',location.pathname);
 
 
   const links = (
@@ -20,8 +20,8 @@ console.log('route is',location.pathname);
       <NavLink className="px-3 font-semibold" to={"/add-model"}>
         Add Model
       </NavLink>
-      <NavLink className="px-3 font-semibold" to={"/view-models"}>
-        View Models
+      <NavLink className="px-3 font-semibold" to={"/all-models"}>
+        All Models
       </NavLink>
     </>
   );

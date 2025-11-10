@@ -4,9 +4,9 @@ import Login from "../pages/Login/Login";
 import Home from "../pages/Home";
 import PrivateRoute from "../provider/PrivateRoute";
 import AddModel from "../pages/add-model/AddModel";
-import ViewModels from "../pages/view-models/ViewModels";
 import ModelPurchase from "../pages/model-purchase/ModelPurchase";
 import MyModels from "../pages/my-models/MyModels";
+import AllModels from "../pages/all-models/AllModels";
 
 export const router = createBrowserRouter([
     {
@@ -27,8 +27,8 @@ export const router = createBrowserRouter([
 
             },
             {
-                path:'view-models',
-                element:<ViewModels></ViewModels>
+                path:'all-models',
+                element:<AllModels></AllModels>
             },
             {
                 path:'model-purchase',
