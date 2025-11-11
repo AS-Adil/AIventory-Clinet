@@ -14,7 +14,6 @@ const Login = () => {
    const navigate = useNavigate();
    const location = useLocation()
 
-     const [error, setError] = useState("");
    
    
 
@@ -39,8 +38,8 @@ const Login = () => {
       
     })
     .catch(error=>{
-      setError(error.message)
       setLoading(false)
+      toast.error(error.message)
     })
 
 
@@ -66,7 +65,7 @@ const Login = () => {
     <div
       className=" col-span-2 flex flex-col justify-center items-center min-h-screen "
     >
-      <title>GreenNest -Login</title>
+      <title>AIventory -Login</title>
 
 
 
@@ -125,7 +124,6 @@ const Login = () => {
 </div>
 
 
-     {error && <span className="text-red-600 font-semibold">{error}</span>}
 
 
           <button
@@ -138,9 +136,9 @@ const Login = () => {
 
         </form>
 
-        <Link to={"/forgotPas"}
+        <p
         className="hover:text-blue-600 hover:underline"
-        >Forget Password</Link>
+        >Forget Password</p>
 
             <div className="mt-4">
           <button
@@ -181,7 +179,8 @@ const Login = () => {
           </button>
 
         </div>
-                  <p className="text-center mt-3">
+
+              <p className="text-center mt-3">
             Don't have an account ?
             <Link to={"/register"} className="text-blue-500 underline">
               {" "}

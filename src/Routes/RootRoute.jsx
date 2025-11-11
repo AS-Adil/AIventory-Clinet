@@ -9,6 +9,7 @@ import MyModels from "../pages/my-models/MyModels";
 import AllModels from "../pages/all-models/AllModels";
 import ModelDetails from "../pages/model-details/ModelDetails";
 import EditPage from "../pages/edit-page/EditPage";
+import Register from "../pages/register/Register";
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,11 @@ export const router = createBrowserRouter([
             {
                 path:'update-model/:id',
                 element:<PrivateRoute><EditPage></EditPage></PrivateRoute>
+            },
+            {
+                path:'register',
+                element:<Register></Register>
+            
             }
         ]
         
