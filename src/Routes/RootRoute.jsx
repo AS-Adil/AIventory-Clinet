@@ -8,6 +8,7 @@ import ModelPurchase from "../pages/model-purchase/ModelPurchase";
 import MyModels from "../pages/my-models/MyModels";
 import AllModels from "../pages/all-models/AllModels";
 import ModelDetails from "../pages/model-details/ModelDetails";
+import EditPage from "../pages/edit-page/EditPage";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path:'models/:id',
                 element:<PrivateRoute><ModelDetails></ModelDetails></PrivateRoute>
+            },
+            {
+                path:'update-model/:id',
+                element:<PrivateRoute><EditPage></EditPage></PrivateRoute>
             }
         ]
         
