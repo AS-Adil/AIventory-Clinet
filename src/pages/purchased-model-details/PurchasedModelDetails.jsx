@@ -46,11 +46,13 @@ const PurchasedModelDetails = () => {
             // console.log("after deleting", data);
 
             if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "The Model has been deleted.",
-                icon: "success",
-              });
+            //   Swal.fire({
+            //     title: "Deleted!",
+            //     text: "The Model has been deleted.",
+            //     icon: "success",
+            //   });
+              toast.success(`Deleted ${model.name} Successfully`)
+
               navigate("/models");
             }
           });

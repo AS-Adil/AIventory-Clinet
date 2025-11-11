@@ -13,6 +13,7 @@ const ModelDetails = () => {
 
   const [model, setModel] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [refetch, setRefecth] = useState(false)
 
   useEffect(() => {
     setLoading(true);
@@ -23,7 +24,7 @@ const ModelDetails = () => {
       })
       .then((data) => setModel(data))
       .finally(() => setLoading(false));
-  }, [id]);
+  }, [user,id, refetch]);
 
   const isOwner = user && model && user.email === model.createdBy;
 
@@ -46,11 +47,12 @@ const ModelDetails = () => {
             // console.log("after deleting", data);
 
             if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "The Model has been deleted.",
-                icon: "success",
-              });
+              // Swal.fire({
+              //   title: "Deleted!",
+              //   text: "The Model has been deleted.",
+              //   icon: "success",
+              // });
+              toast.success(`Deleted ${model.name} Successfully`)
               navigate("/models");
             }
           });
@@ -73,14 +75,15 @@ const ModelDetails = () => {
     };
 
 
-        fetch("http://localhost:3000/purchased-models", {
+        fetch(`http://localhost:3000/purchased-models/${model._id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(PurchasedModel),
       })
       .then(res =>res.json())
       .then(data=>{
-        console.log(data)
+        // console.log(data)
+        setRefecth(!refetch)
         toast.success(`Purchased ${model.name} successfully`)
       })
 
@@ -203,7 +206,7 @@ const ModelDetails = () => {
                   ? new Date(model.createdAt).toLocaleString()
                   : "—"}
               </div>
-              <div>Purchased: {model.purchased ?? 0} times</div>
+              <div>Purchased: {model.purchased} times</div>
             </div>
           </div>
         </div>
