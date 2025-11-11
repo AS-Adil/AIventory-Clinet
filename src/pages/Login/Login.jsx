@@ -52,8 +52,9 @@ const Login = () => {
     const handleSignUp = () => {
     signUpWithGoogle()
      .then(() => {
-      // setUser(result.user);
-      // console.log(result);
+   
+      toast.success("Logged in with Google");
+
       navigate(`${location.state ? location.state : "/"}`);
     });
   };
