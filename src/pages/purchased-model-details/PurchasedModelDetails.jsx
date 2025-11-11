@@ -6,7 +6,7 @@ import { AuthContext } from "../../provider/AuthContext";
 import { Pencil, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 
-const ModelDetails = () => {
+const PurchasedModelDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -17,7 +17,7 @@ const ModelDetails = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:3000/models/${id}`)
+    fetch(`http://localhost:3000/purchased-models/${id}`)
       .then((res) => {
         return res.json();
       })
@@ -212,4 +212,4 @@ const ModelDetails = () => {
   );
 };
 
-export default ModelDetails;
+export default PurchasedModelDetails;
