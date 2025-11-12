@@ -63,6 +63,7 @@ const ModelDetails = () => {
   const handlePurchase = () => {
     const PurchasedModel = {
       name: model.name,
+      modelId:model._id,
       framework: model.framework,
       useCase: model.useCase,
       dataset: model.dataset,
