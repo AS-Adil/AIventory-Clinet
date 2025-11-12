@@ -9,7 +9,7 @@ const AllModels = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3000/models")
+    fetch("https://aiventory-server.vercel.app/models")
       .then((res) => res.json())
       .then((data) => {
         setModels(data);
@@ -25,7 +25,7 @@ const AllModels = () => {
     console.log(search_text);
     setLoading(true);
 
-    fetch(`http://localhost:3000/search?search=${search_text}`)
+    fetch(`https://aiventory-server.vercel.app/search?search=${search_text}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

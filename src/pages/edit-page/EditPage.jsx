@@ -13,7 +13,7 @@ const EditPage = () => {
   // Fetch current model details
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/models/${id}`)
+    fetch(`https://aiventory-server.vercel.app/models/${id}`)
       .then((res) => res.json())
       .then((data) => setModel(data))
       .finally(() => setLoading(false));
@@ -32,7 +32,7 @@ const EditPage = () => {
       image: form.image.value,
     };
 
-    fetch(`http://localhost:3000/models/${id}`, {
+    fetch(`https://aiventory-server.vercel.app/models/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedModel),

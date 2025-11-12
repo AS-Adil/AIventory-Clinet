@@ -11,7 +11,7 @@ const MyModels = () => {
 
     useEffect(()=>{
         setLoading(true)
-        fetch(`http://localhost:3000/models-of?email=${user?.email}`)
+        fetch(`https://aiventory-server.vercel.app/models-of?email=${user?.email}`)
         .then(res =>res.json())
         .then(data =>{
             setModels(data)

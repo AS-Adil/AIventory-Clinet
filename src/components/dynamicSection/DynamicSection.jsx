@@ -8,7 +8,7 @@ const DynamicSection = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3000/latest-models")
+    fetch("https://aiventory-server.vercel.app/latest-models")
       .then((res) => res.json())
       .then((data) => {
         setModels(data);

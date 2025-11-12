@@ -18,7 +18,7 @@ const ModelDetails = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:3000/models/${id}`)
+    fetch(`https://aiventory-server.vercel.app/models/${id}`)
       .then((res) => {
         return res.json();
       })
@@ -39,7 +39,7 @@ const ModelDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/models/${id}`, {
+        fetch(`https://aiventory-server.vercel.app/models/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -75,7 +75,7 @@ const ModelDetails = () => {
       purchased: 0,
     };
 
-    fetch(`http://localhost:3000/purchased-models/${model._id}`, {
+    fetch(`https://aiventory-server.vercel.app/purchased-models/${model._id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(PurchasedModel),
