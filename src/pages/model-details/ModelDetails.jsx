@@ -137,7 +137,7 @@ const ModelDetails = () => {
         <p className="text-sm text-base-content mt-1">{model.useCase}</p>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-end">
         <button
           onClick={handlePurchase}
           className="font-semibold px-4 py-2 rounded-2xl border border-secondary text-secondary hover:bg-secondary hover:text-white hover:cursor-pointer hover:scale-103 transition"
@@ -146,7 +146,7 @@ const ModelDetails = () => {
         </button>
 
         {isOwner && (
-          <div className="flex items-center gap-2 font-semibold">
+          <div className="flex items-center max-sm:justify-between gap-2 font-semibold ">
             <Link
               to={`/update-model/${model._id}`}
               className="flex items-center gap-1 px-4 py-2 rounded-2xl text-white bg-secondary hover:scale-102 transition"

@@ -50,6 +50,14 @@ const AllModels = () => {
     // console.log(frame);
   };
 
+  let frameworksName = [];
+  for (let i = 0; i < forFramework?.length; i++) {
+    const framework = forFramework[i].framework;
+    if (!frameworksName.includes(framework)) {
+      frameworksName.push(framework);
+    }
+  }
+
   if (loading) {
     return <Spinner></Spinner>;
   }
@@ -60,13 +68,11 @@ const AllModels = () => {
         Explore All AI Models
       </h1>
 
-      <div className=" mt-5 mb-10 flex gap-2 justify-between items-center">
-        <div>
+      {/* <div className=" mt-5 mb-10 flex gap-2 justify-between items-center"> */}
+      <div className="mt-5 mb-10 flex flex-col items-center sm:flex-row gap-4 sm:gap-2 sm:justify-between sm:items-center">
+        <div className=" max-sm:w-[85%]">
           <label className="form-control w-full max-w-xs">
-            <select
-              className="select select-bordered"
-            
-            >
+            <select className="select select-bordered">
               <option disabled>Sort by Framework</option>
               <option
                 onClick={() => {
@@ -76,15 +82,11 @@ const AllModels = () => {
                 All
               </option>
 
-              {forFramework.map((model) => (
-                <option
-                  key={model._id}
-                  onClick={() => handleSort(model.framework)}
-                >
-                  {model.framework}
+              {frameworksName.map((framework, idx) => (
+                <option key={idx} onClick={() => handleSort(framework)}>
+                  {framework}
                 </option>
               ))}
-             
             </select>
           </label>
         </div>

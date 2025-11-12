@@ -78,7 +78,7 @@ const Register = () => {
         </div>
       )}
 
-<h2 className="text-5xl font-bold text-base-content mt-11">
+<h2 className="text-5xl font-bold text-center text-base-content mt-11">
   Register for <span className="text-primary">AIventory</span>
 </h2>
 

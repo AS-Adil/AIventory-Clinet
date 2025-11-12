@@ -48,9 +48,9 @@ const Login = () => {
         </div>
       )}
 
-   <h2 className="text-5xl font-bold text-base-content mb-4 -translate-y-13">
+   <h2 className="text-5xl font-bold text-base-content text-center mt-11 mb-6 -translate-y-13">
 
-        Login to AIventory
+        Login to <span className="text-primary">AIventory</span>
       </h2>
 
       <div className="bg-base-100 w-full px-6 pt-9 pb-6 shadow-xl rounded-xl mx-auto max-w-lg -translate-y-6 border border-base-300">

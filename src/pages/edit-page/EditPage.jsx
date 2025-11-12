@@ -9,6 +9,7 @@ const EditPage = () => {
 
   const [model, setModel] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
   // Fetch current model details
   useEffect(() => {
@@ -22,6 +23,7 @@ const EditPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
+    setSubmitting(true);
 
     const updatedModel = {
       name: form.name.value,
@@ -62,7 +64,8 @@ const EditPage = () => {
           title: "Error",
           text: err.message || "Something went wrong",
         });
-      });
+      })
+      .finally(() => setSubmitting(false));
   };
 
   if (loading) {
@@ -80,7 +83,6 @@ const EditPage = () => {
   return (
     <div className="max-w-2xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-center text-base-content mb-8">
-
         Edit Model
       </h1>
 
@@ -89,7 +91,9 @@ const EditPage = () => {
         className="space-y-6 bg-base-200 p-6 rounded-xl shadow-md border border-base-300"
       >
         <div>
-          <label className="block font-medium mb-1 text-base-content">Model Name</label>
+          <label className="block font-medium mb-1 text-base-content">
+            Model Name
+          </label>
           <input
             type="text"
             name="name"
@@ -100,7 +104,9 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1 text-base-content">Framework</label>
+          <label className="block font-medium mb-1 text-base-content">
+            Framework
+          </label>
           <input
             type="text"
             name="framework"
@@ -111,7 +117,9 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1 text-base-content">Use Case</label>
+          <label className="block font-medium mb-1 text-base-content">
+            Use Case
+          </label>
           <input
             type="text"
             name="useCase"
@@ -122,7 +130,9 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1 text-base-content">Dataset</label>
+          <label className="block font-medium mb-1 text-base-content">
+            Dataset
+          </label>
           <input
             type="text"
             name="dataset"
@@ -133,7 +143,9 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1 text-base-content">Description</label>
+          <label className="block font-medium mb-1 text-base-content">
+            Description
+          </label>
           <textarea
             name="description"
             rows="4"
@@ -144,7 +156,9 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1 text-base-content">Image URL</label>
+          <label className="block font-medium mb-1 text-base-content">
+            Image URL
+          </label>
           <input
             type="url"
             name="image"
@@ -156,9 +170,10 @@ const EditPage = () => {
 
         <button
           type="submit"
+          disabled={submitting}
           className="w-full bg-secondary text-white py-2 rounded-lg hover:bg-secondary/90 transition"
         >
-          Update Model
+          {submitting ? "Updating..." : "Update Model"}
         </button>
       </form>
     </div>

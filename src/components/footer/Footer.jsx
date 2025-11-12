@@ -79,17 +79,13 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* company */}
+        {/*  Repositories */}
         <div>
-          <h3 className="text-lg font-semibold text-base-content mb-3">Company</h3>
+          <h3 className="text-lg font-semibold text-base-content mb-3">Repositories</h3>
           <ul className="space-y-2 text-base-content">
-            <li><Link to="/team" className="hover:text-primary">Our Team</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">Contact Us</Link></li>
-            <li><Link to="/host" className="hover:text-primary">Host a Competition</Link></li>
-            <li>
-              <Link to="/terms" className="hover:text-primary">Terms</Link> ·{" "}
-              <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
-            </li>
+            <li><a className="hover:text-primary" href="https://github.com/AS-Adil/AIventory-Clinet">AIventory-Client</a></li>
+            <li><a className="hover:text-primary" href="https://github.com/AS-Adil/AIventory-Server">AIventory-Server</a></li>
+
           </ul>
         </div>
       </div>
