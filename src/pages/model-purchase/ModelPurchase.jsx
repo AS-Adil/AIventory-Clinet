@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Spinner from '../../components/Spinner';
 import { AuthContext } from '../../provider/AuthContext';
-import PurchasedModelCard from '../../components/purchased-mode-card/PurchasedModelCard';
+import ModelCard from '../../components/ModelCard';
 
 const ModelPurchase = () => {
     const {user} = useContext(AuthContext)
@@ -32,7 +32,7 @@ const ModelPurchase = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {models.map(model => (
-          <PurchasedModelCard key={model._id} model={model} />
+          <ModelCard key={model._id} model={model} />
         ))}
       </div>
     </div>

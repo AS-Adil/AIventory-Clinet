@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import toast, { Toaster } from "react-hot-toast";
 import { ChevronDown } from "lucide-react";
 import { AuthContext } from "../../provider/AuthContext";
+import ThemeToggle from "../theme-toggle/ThemeToggle";
 
 const Navbar = () => {
   const { user, setUser, logOut } = useContext(AuthContext);
@@ -84,6 +85,10 @@ const Navbar = () => {
 
 
       <div className="navbar-end">
+        <div>
+           <ThemeToggle></ThemeToggle>
+        </div>
+
         {user ? (
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="m-1">
@@ -96,7 +101,7 @@ const Navbar = () => {
 
             <ul
               tabIndex="-1"
-              className="dropdown-content menu bg-[#F7F7F7] rounded-box z-1 w-[280px] p-2 shadow-sm "
+              className="dropdown-content menu bg-base-200 rounded-box z-1 w-[280px] p-2 shadow-sm "
             >
 
               <img
@@ -105,30 +110,42 @@ const Navbar = () => {
                 alt=""
               />
 
-              <p className="text-xs text-center mt-1 font-thin text-secondary">{user?.email}</p>
-              <h1 className="text-lg text-secondary font-semibold text-center ">
+              <p className="text-xs text-center mt-1 font-thin text-base-content">{user?.email}</p>
+              <h1 className="text-lg text-base-content font-semibold text-center ">
                 {user?.displayName}
               </h1>
 
-              <div className=" mx-auto mt-2">
 
-                <Link
-                 className={` shadow-md rounded-l-xl py-1.5 px-2  hover:scale-102 transition duration-150
-                  ${location.pathname ==='/model-purchase' && 'bg-secondary text-white '}
-                  
-                  `}
-                 
-                 to={'/model-purchase'}>Model Purchase</Link>
+<div className=" mx-auto mt-2 rounded-xl  p-2 flex">
+  <Link
+    className={`text-base-content border border-gray-300 shadow-xl rounded-l-xl py-1.5 px-2  hover:scale-102 transition duration-150 ${
+      location.pathname === "/model-purchase" && "bg-secondary text-white"
+    }`}
+    to={"/model-purchase"}
+  >
+    Model Purchase
+  </Link>
+
+  <Link
+    className={`text-base-content border border-gray-300 shadow-xl border-l-0 rounded-r-xl px-3 py-1.5  hover:scale-102 transition duration-150 ${
+      location.pathname === "/my-models" && "bg-secondary text-white"
+    }`}
+    to={"/my-models"}
+  >
+    My Models
+  </Link>
+</div>
+
+         
 
 
-                <Link className={` border-l-0 shadow-md rounded-r-xl px-3 py-1.5  hover:scale-102 transition duration-150 ${location.pathname ==='/my-models' && 'bg-secondary text-white '}  `} 
-                to={'/my-models'}>My Models</Link>
 
-              </div>
+
+
 
               <button
                 onClick={handleLogout}
-                className="bg-secondary mb-2 rounded-2xl cursor-pointer text-white font-semibold
+                className="bg-secondary shadow-xl mb-2 rounded-2xl cursor-pointer text-white font-semibold
                 py-1.5 w-[80%] mt-4 mx-auto shadow
            hover:scale-102 transition duration-150
            "
@@ -142,7 +159,7 @@ const Navbar = () => {
             <div className="">
               <Link
                 to={"/login"}
-                className="bg-[#202124] mx-2 px-5 py-1.5 rounded-2xl cursor-pointer text-white font-semibold "
+                className="bg-secondary mx-2 px-5 py-1.5 rounded-2xl cursor-pointer text-white font-semibold "
               >
                 Login
               </Link>

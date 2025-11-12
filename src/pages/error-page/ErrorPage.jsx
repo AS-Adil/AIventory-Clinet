@@ -3,13 +3,16 @@ import { Link } from "react-router";
 
 const ErrorPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center px-4">
+   <div className="flex flex-col items-center justify-center min-h-screen bg-base-100 text-center px-4">
+
       <h1 className="text-6xl font-bold text-red-500">404</h1>
 
-      <p className="mt-6 text-2xl font-semibold text-gray-800">
+      <p className="mt-6 text-2xl font-semibold text-base-content">
+
         Oops! This AI model doesn’t exist.
       </p>
-      <p className="mt-2 text-gray-600">
+ <p className="mt-2 text-base-content">
+
         The page you’re looking for might have been removed or never created.
       </p>
 

@@ -10,7 +10,6 @@ import AllModels from "../pages/all-models/AllModels";
 import ModelDetails from "../pages/model-details/ModelDetails";
 import EditPage from "../pages/edit-page/EditPage";
 import Register from "../pages/register/Register";
-import PurchasedModelDetails from "../pages/purchased-model-details/PurchasedModelDetails";
 import ErrorPage from "../pages/error-page/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -57,10 +56,7 @@ export const router = createBrowserRouter([
                 element:<Register></Register>
             
             },
-            {
-                path:'purchased-details/:id',
-                element:<PrivateRoute><PurchasedModelDetails></PurchasedModelDetails></PrivateRoute>
-            }
+
         ]
         
     }

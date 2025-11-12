@@ -78,17 +78,18 @@ const EditPage = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-center text-secondary mb-8">
+    <div className="max-w-2xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold text-center text-base-content mb-8">
+
         Edit Model
       </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 bg-white p-6 rounded-xl shadow-md border border-gray-100"
+        className="space-y-6 bg-base-200 p-6 rounded-xl shadow-md border border-base-300"
       >
         <div>
-          <label className="block font-medium mb-1">Model Name</label>
+          <label className="block font-medium mb-1 text-base-content">Model Name</label>
           <input
             type="text"
             name="name"
@@ -99,7 +100,7 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Framework</label>
+          <label className="block font-medium mb-1 text-base-content">Framework</label>
           <input
             type="text"
             name="framework"
@@ -110,7 +111,7 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Use Case</label>
+          <label className="block font-medium mb-1 text-base-content">Use Case</label>
           <input
             type="text"
             name="useCase"
@@ -121,7 +122,7 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Dataset</label>
+          <label className="block font-medium mb-1 text-base-content">Dataset</label>
           <input
             type="text"
             name="dataset"
@@ -132,7 +133,7 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Description</label>
+          <label className="block font-medium mb-1 text-base-content">Description</label>
           <textarea
             name="description"
             rows="4"
@@ -143,7 +144,7 @@ const EditPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Image URL</label>
+          <label className="block font-medium mb-1 text-base-content">Image URL</label>
           <input
             type="url"
             name="image"

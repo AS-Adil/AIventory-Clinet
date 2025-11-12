@@ -6,8 +6,14 @@ import { AuthContext } from "../../provider/AuthContext";
 import Spinner from "../../components/Spinner";
 
 const Register = () => {
-  const { createUser, setUser, signUpWithGoogle, updateUser, loading, setLoading } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    setUser,
+    signUpWithGoogle,
+    updateUser,
+    loading,
+    setLoading,
+  } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +29,9 @@ const Register = () => {
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
     if (!passwordRegex.test(password)) {
-      toast.error("Password must include upper & lower case letters and be 6+ characters");
+      toast.error(
+        "Password must include upper & lower case letters and be 6+ characters"
+      );
       return;
     }
 
@@ -56,13 +64,13 @@ const Register = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error(error.message );
+        toast.error(error.message);
       });
   };
 
   return (
     <div className="col-span-2 flex flex-col justify-center items-center min-h-screen">
-      <title>AIventory - Register</title>
+     
 
       {loading && (
         <div>
@@ -70,13 +78,18 @@ const Register = () => {
         </div>
       )}
 
-      <h2 className="text-5xl font-bold text-secondary mt-11">
-        Register for <span className="text-primary">AIventory</span>
-      </h2>
+<h2 className="text-5xl font-bold text-base-content mt-11">
+  Register for <span className="text-primary">AIventory</span>
+</h2>
 
-      <div className="bg-[#F7F7F7] w-full px-6 pt-9 pb-6 shadow-xl rounded-xl mx-auto max-w-lg my-12">
+
+      <div className="bg-base-100 w-full px-6 pt-9 pb-6 shadow-xl rounded-xl mx-auto max-w-lg my-12 border border-base-300">
+
         <form onSubmit={handleRegister} className="space-y-4">
-          <label htmlFor="name" className="block mb-1.5 ml-1 text-primary font-semibold">
+          <label
+            htmlFor="name"
+            className="block mb-1.5 ml-1 text-primary font-semibold"
+          >
             Name
           </label>
           <input
@@ -88,7 +101,10 @@ const Register = () => {
             className="w-full border border-gray-300 rounded-lg px-4 py-2"
           />
 
-          <label htmlFor="email" className="block mb-1.5 ml-1 text-primary font-semibold">
+          <label
+            htmlFor="email"
+            className="block mb-1.5 ml-1 text-primary font-semibold"
+          >
             Email
           </label>
           <input
@@ -100,7 +116,10 @@ const Register = () => {
             className="w-full border border-gray-300 rounded-lg px-4 py-2"
           />
 
-          <label htmlFor="photo" className="block mb-1.5 ml-1 text-primary font-semibold">
+          <label
+            htmlFor="photo"
+            className="block mb-1.5 ml-1 text-primary font-semibold"
+          >
             Photo URL
           </label>
           <input
@@ -112,7 +131,10 @@ const Register = () => {
             className="w-full border border-gray-300 rounded-lg px-4 py-2"
           />
 
-          <label htmlFor="password" className="block mb-1.5 ml-1 text-primary font-semibold">
+          <label
+            htmlFor="password"
+            className="block mb-1.5 ml-1 text-primary font-semibold"
+          >
             Password
           </label>
 
@@ -127,7 +149,8 @@ const Register = () => {
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-2.5 cursor-pointer text-gray-500"
+              className="absolute right-3 top-2.5 cursor-pointer text-base-content"
+
             >
               {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
             </span>
@@ -142,7 +165,8 @@ const Register = () => {
 
           <p>
             Already have an account?
-            <Link to="/login" className="text-blue-500 underline ml-1">
+            <Link to="/login" className="text-primary underline ml-1">
+
               Login
             </Link>
           </p>
@@ -161,10 +185,22 @@ const Register = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
-              <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341" />
-              <path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57" />
-              <path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73" />
-              <path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55" />
+              <path
+                fill="#34a853"
+                d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
+              />
+              <path
+                fill="#4285f4"
+                d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
+              />
+              <path
+                fill="#fbbc02"
+                d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
+              />
+              <path
+                fill="#ea4335"
+                d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
+              />
             </svg>
             Sign up with Google
           </button>

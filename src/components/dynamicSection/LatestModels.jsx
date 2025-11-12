@@ -2,10 +2,12 @@ import { Link } from "react-router";
 
 const LatestModels = ({ model }) => {
   return (
-    <div className="flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-xl transition-all duration-200 ">
+<div className="flex flex-col justify-between rounded-2xl border border-base-300 bg-base-200 p-5 shadow-sm hover:shadow-xl transition-all duration-200">
+
       <div>
         <div className="flex justify-between items-start gap-3">
-          <h2 className="text-lg font-semibold text-gray-800 leading-tight line-clamp-2">
+          <h2 className="text-lg font-semibold text-base-content leading-tight line-clamp-2">
+
             {model.name}
           </h2>
           <img
@@ -15,11 +17,13 @@ const LatestModels = ({ model }) => {
           />
         </div>
 
-        <p className="mt-3 text-sm font-medium text-gray-700">
+       <p className="mt-3 text-sm font-medium text-base-content">
+
           {model.framework}
         </p>
 
-        <p className="mt-2 text-sm text-gray-600 line-clamp-3">
+       <p className="mt-2 text-sm text-base-content line-clamp-3">
+
           {model.description}
         </p>
       </div>

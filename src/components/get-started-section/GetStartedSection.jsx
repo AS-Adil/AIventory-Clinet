@@ -3,12 +3,12 @@ import { Link } from "react-router";
 
 const GetStartedSection = () => {
   return (
-    <section className=" py-16 border-t border-gray-100">
+    <section className="py-16 border-t border-base-300 bg-base-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center transform">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-base-content mb-4">
           Ready to Manage Your AI Models?
         </h2>
-        <p className="text-lg text-gray-700 mb-6">
+        <p className="text-lg text-base-content mb-6">
           Create an account or log in to start adding, editing, and tracking
           your AI models. Whether you're building for research or production,
           our tools help you stay organized and in control.
