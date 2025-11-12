@@ -11,11 +11,13 @@ import ModelDetails from "../pages/model-details/ModelDetails";
 import EditPage from "../pages/edit-page/EditPage";
 import Register from "../pages/register/Register";
 import PurchasedModelDetails from "../pages/purchased-model-details/PurchasedModelDetails";
+import ErrorPage from "../pages/error-page/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path:'/',
         Component:MainLayout,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 index:true,

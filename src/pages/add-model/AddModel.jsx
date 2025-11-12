@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthContext";
+import Spinner from "../../components/Spinner";
 
 const AddModel = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ const AddModel = () => {
     };
 
 
+        setLoading(true)
        fetch("http://localhost:3000/models", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,19 +42,21 @@ const AddModel = () => {
       .then(res =>res.json())
       .then((data) =>{
 
-        Swal.fire({
-          icon: "success",
-          title: "Model Added",
-          text: "Your model has been successfully added!",
-          timer: 1800,
-          showConfirmButton: false,
-        });
+        // Swal.fire({
+        //   icon: "success",
+        //   title: "Model Added",
+        //   text: "Your model has been successfully added!",
+        //   timer: 1800,
+        //   showConfirmButton: false,
+        // });
         console.log(data);
+        setLoading(false)
         navigate("/models");
 
 
       })
       .catch(err =>{
+        setLoading(false)  
         Swal.fire({
         icon: "error",
         title: "Error",
@@ -64,6 +69,10 @@ const AddModel = () => {
 
     
   };
+
+  if(loading){
+    return <Spinner></Spinner>
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">

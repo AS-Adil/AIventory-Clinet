@@ -65,7 +65,7 @@ const Register = () => {
       <title>AIventory - Register</title>
 
       {loading && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm z-50">
+        <div>
           <Spinner />
         </div>
       )}
