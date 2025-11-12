@@ -41,7 +41,6 @@ const Login = () => {
 
   return (
     <div className=" col-span-2 flex flex-col justify-center items-center min-h-screen ">
-      <title>AIventory -Login</title>
 
       {loading && (
         <div>
