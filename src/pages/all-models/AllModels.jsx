@@ -18,7 +18,7 @@ const AllModels = () => {
     }, [])
     // console.log(models);
 
-    if(loading){
+    if(!loading){
         return <Spinner></Spinner>
     }
 
