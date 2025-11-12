@@ -26,15 +26,22 @@ const MyModels = () => {
 
   return (
     <div className="px-4 sm:px-6 lg:px-12 py-10">
-      <h1 className="text-4xl font-bold text-center text-primary mb-10">
+
+      {models.length === 0 ? <h1 className='text-4xl font-bold text-center text-primary mb-10'>You haven't added any model</h1> 
+      :
+      <>
+      <h1 className={`text-4xl font-bold text-center text-primary mb-10 `}>
         My Models
       </h1>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {models.map(model => (
           <ModelCard key={model._id} model={model} />
         ))}
       </div>
+      </>
+
+      }
+
     </div>
   );
 };

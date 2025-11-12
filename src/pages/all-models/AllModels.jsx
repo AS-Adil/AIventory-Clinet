@@ -22,13 +22,13 @@ const AllModels = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search_text = e.target.search.value;
-    console.log(search_text);
+    // console.log(search_text);
     setLoading(true);
 
     fetch(`https://aiventory-server.vercel.app/search?search=${search_text}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setModels(data);
         setLoading(false);
       })

@@ -47,7 +47,7 @@ const AddModel = () => {
         //   timer: 1800,
         //   showConfirmButton: false,
         // });
-        console.log(data);
+        // console.log(data);
         setLoading(false);
         navigate("/models");
       })
